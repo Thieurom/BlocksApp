@@ -17,6 +17,9 @@ class QuoteViewControllerTests: XCTestCase {
         super.setUp()
         
         sut = QuoteViewController()
+        UIApplication.shared.keyWindow?.rootViewController = sut
+        
+        sut.loadViewIfNeeded()
     }
     
     override func tearDown() {
@@ -24,11 +27,12 @@ class QuoteViewControllerTests: XCTestCase {
     }
     
     func testHasTextLabel() {
-        UIApplication.shared.keyWindow?.rootViewController = sut
-        
-        sut.loadViewIfNeeded()
-        
         XCTAssertNotNil(sut.textLabel)
         XCTAssertTrue(sut.textLabel.isDescendant(of: sut.view))
+    }
+    
+    func testHasAuthorNameLabel() {
+        XCTAssertNotNil(sut.authorNameLabel)
+        XCTAssertTrue(sut.authorNameLabel.isDescendant(of: sut.view))
     }
 }
