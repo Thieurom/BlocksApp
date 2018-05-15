@@ -13,9 +13,7 @@ class QuoteStore {
     lazy var session: URLSession = URLSession.shared
     
     func fetchRandomQuote() {
-        guard let url = URL(string: "http://quotes.stormconsultancy.co.uk/random.json") else {
-            fatalError()
-        }
+        let url: URL = ProgrammingQuotesAPI.randomQuoteURL
         
         session.dataTask(with: url) { (_, _, _) in
             //
