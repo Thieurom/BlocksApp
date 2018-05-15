@@ -14,6 +14,7 @@ class QuoteViewController: UIViewController {
     
     lazy var textLabel: UILabel = UILabel()
     lazy var authorNameLabel: UILabel = UILabel()
+    lazy var nextQuoteButton: UIButton = UIButton()
     
     // MARK: Life cycle
     
@@ -22,5 +23,6 @@ class QuoteViewController: UIViewController {
         
         view.addSubview(textLabel)
         view.addSubview(authorNameLabel)
+        view.addSubview(nextQuoteButton)
     }
 }

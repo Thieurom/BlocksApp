@@ -35,4 +35,9 @@ class QuoteViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.authorNameLabel)
         XCTAssertTrue(sut.authorNameLabel.isDescendant(of: sut.view))
     }
+    
+    func testHasNextQuoteButton() {
+        XCTAssertNotNil(sut.nextQuoteButton)
+        XCTAssertTrue(sut.nextQuoteButton.isDescendant(of: sut.view))
+    }
 }
