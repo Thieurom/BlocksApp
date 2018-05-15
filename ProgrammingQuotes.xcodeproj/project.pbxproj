@@ -8,11 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D87B9EFA20AA7FFD0047CCB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9EF920AA7FFD0047CCB0 /* AppDelegate.swift */; };
-		D87B9EFC20AA7FFD0047CCB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9EFB20AA7FFD0047CCB0 /* ViewController.swift */; };
-		D87B9EFF20AA7FFD0047CCB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87B9EFD20AA7FFD0047CCB0 /* Main.storyboard */; };
 		D87B9F0120AA7FFE0047CCB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D87B9F0020AA7FFE0047CCB0 /* Assets.xcassets */; };
 		D87B9F0420AA7FFE0047CCB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87B9F0220AA7FFE0047CCB0 /* LaunchScreen.storyboard */; };
-		D87B9F0F20AA7FFF0047CCB0 /* ProgrammingQuotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9F0E20AA7FFF0047CCB0 /* ProgrammingQuotesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,13 +25,10 @@
 /* Begin PBXFileReference section */
 		D87B9EF620AA7FFD0047CCB0 /* ProgrammingQuotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgrammingQuotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87B9EF920AA7FFD0047CCB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D87B9EFB20AA7FFD0047CCB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D87B9EFE20AA7FFD0047CCB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D87B9F0020AA7FFE0047CCB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D87B9F0320AA7FFE0047CCB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D87B9F0520AA7FFE0047CCB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D87B9F0A20AA7FFF0047CCB0 /* ProgrammingQuotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgrammingQuotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D87B9F0E20AA7FFF0047CCB0 /* ProgrammingQuotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingQuotesTests.swift; sourceTree = "<group>"; };
 		D87B9F1020AA7FFF0047CCB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,8 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				D87B9EF920AA7FFD0047CCB0 /* AppDelegate.swift */,
-				D87B9EFB20AA7FFD0047CCB0 /* ViewController.swift */,
-				D87B9EFD20AA7FFD0047CCB0 /* Main.storyboard */,
 				D87B9F0020AA7FFE0047CCB0 /* Assets.xcassets */,
 				D87B9F0220AA7FFE0047CCB0 /* LaunchScreen.storyboard */,
 				D87B9F0520AA7FFE0047CCB0 /* Info.plist */,
@@ -90,7 +82,6 @@
 		D87B9F0D20AA7FFF0047CCB0 /* ProgrammingQuotesTests */ = {
 			isa = PBXGroup;
 			children = (
-				D87B9F0E20AA7FFF0047CCB0 /* ProgrammingQuotesTests.swift */,
 				D87B9F1020AA7FFF0047CCB0 /* Info.plist */,
 			);
 			path = ProgrammingQuotesTests;
@@ -106,6 +97,7 @@
 				D87B9EF220AA7FFD0047CCB0 /* Sources */,
 				D87B9EF320AA7FFD0047CCB0 /* Frameworks */,
 				D87B9EF420AA7FFD0047CCB0 /* Resources */,
+				D87B9F1920AA83090047CCB0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -179,7 +171,6 @@
 			files = (
 				D87B9F0420AA7FFE0047CCB0 /* LaunchScreen.storyboard in Resources */,
 				D87B9F0120AA7FFE0047CCB0 /* Assets.xcassets in Resources */,
-				D87B9EFF20AA7FFD0047CCB0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,12 +183,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D87B9F1920AA83090047CCB0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D87B9EF220AA7FFD0047CCB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D87B9EFC20AA7FFD0047CCB0 /* ViewController.swift in Sources */,
 				D87B9EFA20AA7FFD0047CCB0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,7 +212,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D87B9F0F20AA7FFF0047CCB0 /* ProgrammingQuotesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +226,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D87B9EFD20AA7FFD0047CCB0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D87B9EFE20AA7FFD0047CCB0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D87B9F0220AA7FFE0047CCB0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -367,7 +364,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.doanthieu.ProgrammingQuotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -384,7 +381,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.doanthieu.ProgrammingQuotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
