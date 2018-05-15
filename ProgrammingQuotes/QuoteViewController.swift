@@ -10,4 +10,15 @@ import UIKit
 
 class QuoteViewController: UIViewController {
     
+    // MARK: Views
+    
+    lazy var textLabel: UILabel = UILabel()
+    
+    // MARK: Life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.addSubview(textLabel)
+    }
 }

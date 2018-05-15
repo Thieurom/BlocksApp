@@ -11,8 +11,12 @@ import XCTest
 
 class QuoteViewControllerTests: XCTestCase {
     
+    var sut: QuoteViewController!
+    
     override func setUp() {
         super.setUp()
+        
+        sut = QuoteViewController()
     }
     
     override func tearDown() {
@@ -26,5 +30,14 @@ class QuoteViewControllerTests: XCTestCase {
         }
 
         XCTAssertTrue(rootViewController is QuoteViewController)
+    }
+    
+    func testHasTextLabel() {
+        UIApplication.shared.keyWindow?.rootViewController = sut
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertNotNil(sut.textLabel)
+        XCTAssertTrue(sut.textLabel.isDescendant(of: sut.view))
     }
 }
