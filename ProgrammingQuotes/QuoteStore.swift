@@ -21,8 +21,13 @@ class QuoteStore {
         let url: URL = ProgrammingQuotesAPI.randomQuoteURL
         
         session.dataTask(with: url) { (data, _, _) in
-            guard let data = data,
-                let quote = try? JSONDecoder().decode(Quote.self, from: data) else {
+            guard let data = data else {
+                let error = ProgrammingQuotesError.emptyData
+                completion(.failure(error))
+                return
+            }
+            
+            guard let quote = try? JSONDecoder().decode(Quote.self, from: data) else {
                     let error = ProgrammingQuotesError.invalidJSONData
                     completion(.failure(error))
                     return

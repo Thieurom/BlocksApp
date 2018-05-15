@@ -10,6 +10,7 @@ import Foundation
 
 enum ProgrammingQuotesError: Error {
     case invalidJSONData
+    case emptyData
 }
 
 struct ProgrammingQuotesAPI {

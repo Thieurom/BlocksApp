@@ -97,6 +97,29 @@ class QuoteStoreTests: XCTestCase {
             XCTAssertNotNil(catchedError)
         }
     }
+    
+    func testFetchRandomQuoteFailedWithNilData() {
+        let mockURLSession = MockURLSession(data: nil, urlResponse: nil, error: nil)
+        sut.session = mockURLSession
+        
+        let errorExpectation = expectation(description: "Nil Data Error")
+        var catchedError: Error?
+        
+        sut.fetchRandomQuote { (result) in
+            switch result {
+            case .success:
+                XCTFail("Should be failed because of nil data")
+                return
+            case let .failure(error):
+                catchedError = error
+                errorExpectation.fulfill()
+            }
+        }
+        
+        waitForExpectations(timeout: 1.0) { (_) in
+            XCTAssertNotNil(catchedError)
+        }
+    }
 }
 
 extension QuoteStoreTests {
