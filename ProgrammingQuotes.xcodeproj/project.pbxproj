@@ -10,6 +10,8 @@
 		D87B9EFA20AA7FFD0047CCB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9EF920AA7FFD0047CCB0 /* AppDelegate.swift */; };
 		D87B9F0120AA7FFE0047CCB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D87B9F0020AA7FFE0047CCB0 /* Assets.xcassets */; };
 		D87B9F0420AA7FFE0047CCB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87B9F0220AA7FFE0047CCB0 /* LaunchScreen.storyboard */; };
+		D87B9F1B20AA8AFB0047CCB0 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9F1A20AA8AFB0047CCB0 /* Quote.swift */; };
+		D87B9F1D20AA8B080047CCB0 /* QuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9F1C20AA8B080047CCB0 /* QuoteTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +32,8 @@
 		D87B9F0520AA7FFE0047CCB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D87B9F0A20AA7FFF0047CCB0 /* ProgrammingQuotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgrammingQuotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87B9F1020AA7FFF0047CCB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D87B9F1A20AA8AFB0047CCB0 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		D87B9F1C20AA8B080047CCB0 /* QuoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				D87B9EF920AA7FFD0047CCB0 /* AppDelegate.swift */,
+				D87B9F1A20AA8AFB0047CCB0 /* Quote.swift */,
 				D87B9F0020AA7FFE0047CCB0 /* Assets.xcassets */,
 				D87B9F0220AA7FFE0047CCB0 /* LaunchScreen.storyboard */,
 				D87B9F0520AA7FFE0047CCB0 /* Info.plist */,
@@ -83,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				D87B9F1020AA7FFF0047CCB0 /* Info.plist */,
+				D87B9F1C20AA8B080047CCB0 /* QuoteTests.swift */,
 			);
 			path = ProgrammingQuotesTests;
 			sourceTree = "<group>";
@@ -141,6 +147,7 @@
 					};
 					D87B9F0920AA7FFF0047CCB0 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 						TestTargetID = D87B9EF520AA7FFD0047CCB0;
 					};
 				};
@@ -204,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D87B9F1B20AA8AFB0047CCB0 /* Quote.swift in Sources */,
 				D87B9EFA20AA7FFD0047CCB0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D87B9F1D20AA8B080047CCB0 /* QuoteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +399,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ProgrammingQuotesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -399,6 +409,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.doanthieu.ProgrammingQuotesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProgrammingQuotes.app/ProgrammingQuotes";
@@ -410,6 +421,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ProgrammingQuotesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
