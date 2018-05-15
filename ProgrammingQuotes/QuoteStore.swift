@@ -20,7 +20,12 @@ class QuoteStore {
     func fetchRandomQuote(completion: @escaping (QuoteResult) -> Void) {
         let url: URL = ProgrammingQuotesAPI.randomQuoteURL
         
-        session.dataTask(with: url) { (data, _, _) in
+        session.dataTask(with: url) { (data, _, error) in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            
             guard let data = data else {
                 let error = ProgrammingQuotesError.emptyData
                 completion(.failure(error))

@@ -120,6 +120,40 @@ class QuoteStoreTests: XCTestCase {
             XCTAssertNotNil(catchedError)
         }
     }
+    
+    func testFetchRandomQuoteFailedWithError() {
+        let jsonData = """
+        {
+        \"id\": 1,
+        \"author\": \"Anon\",
+        \"quote\": \"Lorem ipsum....\",
+        \"permalink\": \"http://quotes.stormconsultancy.co.uk/quotes/1\"
+        }
+        """.data(using: .utf8)
+        
+        let error = NSError(domain: "Error", code: 1234, userInfo: nil)
+        
+        let mockURLSession = MockURLSession(data: jsonData, urlResponse: nil, error: error)
+        sut.session = mockURLSession
+        
+        let errorExpectation = expectation(description: "Response with Error")
+        var catchedError: Error?
+        
+        sut.fetchRandomQuote { (result) in
+            switch result {
+            case .success:
+                XCTFail("Should be failed because of returned error")
+                return
+            case let .failure(error):
+                catchedError = error
+                errorExpectation.fulfill()
+            }
+        }
+        
+        waitForExpectations(timeout: 1.0) { (_) in
+            XCTAssertNotNil(catchedError)
+        }
+    }
 }
 
 extension QuoteStoreTests {
