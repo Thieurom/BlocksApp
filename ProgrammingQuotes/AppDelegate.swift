@@ -14,7 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window = window ?? UIWindow()
+        
+        let quoteViewController = QuoteViewController()
+        window!.rootViewController = quoteViewController
+        window?.makeKeyAndVisible()
+
         return true
     }
 }

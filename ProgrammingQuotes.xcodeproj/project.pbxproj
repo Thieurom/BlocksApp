@@ -15,6 +15,8 @@
 		D87B9F1F20AA8BEC0047CCB0 /* QuoteStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9F1E20AA8BEC0047CCB0 /* QuoteStoreTests.swift */; };
 		D87B9F2120AA8BF50047CCB0 /* QuoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9F2020AA8BF50047CCB0 /* QuoteStore.swift */; };
 		D87B9F2320AAC5690047CCB0 /* ProgrammingQuotesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9F2220AAC5690047CCB0 /* ProgrammingQuotesAPI.swift */; };
+		D87B9F2520AB35750047CCB0 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9F2420AB35750047CCB0 /* QuoteViewController.swift */; };
+		D87B9F2720AB35890047CCB0 /* QuoteViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9F2620AB35890047CCB0 /* QuoteViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		D87B9F1E20AA8BEC0047CCB0 /* QuoteStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteStoreTests.swift; sourceTree = "<group>"; };
 		D87B9F2020AA8BF50047CCB0 /* QuoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteStore.swift; sourceTree = "<group>"; };
 		D87B9F2220AAC5690047CCB0 /* ProgrammingQuotesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingQuotesAPI.swift; sourceTree = "<group>"; };
+		D87B9F2420AB35750047CCB0 /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
+		D87B9F2620AB35890047CCB0 /* QuoteViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				D87B9F2220AAC5690047CCB0 /* ProgrammingQuotesAPI.swift */,
 				D87B9F1A20AA8AFB0047CCB0 /* Quote.swift */,
 				D87B9F2020AA8BF50047CCB0 /* QuoteStore.swift */,
+				D87B9F2420AB35750047CCB0 /* QuoteViewController.swift */,
 				D87B9F0020AA7FFE0047CCB0 /* Assets.xcassets */,
 				D87B9F0220AA7FFE0047CCB0 /* LaunchScreen.storyboard */,
 				D87B9F0520AA7FFE0047CCB0 /* Info.plist */,
@@ -98,6 +103,7 @@
 				D87B9F1020AA7FFF0047CCB0 /* Info.plist */,
 				D87B9F1C20AA8B080047CCB0 /* QuoteTests.swift */,
 				D87B9F1E20AA8BEC0047CCB0 /* QuoteStoreTests.swift */,
+				D87B9F2620AB35890047CCB0 /* QuoteViewControllerTests.swift */,
 			);
 			path = ProgrammingQuotesTests;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 				D87B9F2120AA8BF50047CCB0 /* QuoteStore.swift in Sources */,
 				D87B9EFA20AA7FFD0047CCB0 /* AppDelegate.swift in Sources */,
 				D87B9F2320AAC5690047CCB0 /* ProgrammingQuotesAPI.swift in Sources */,
+				D87B9F2520AB35750047CCB0 /* QuoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +240,7 @@
 			files = (
 				D87B9F1F20AA8BEC0047CCB0 /* QuoteStoreTests.swift in Sources */,
 				D87B9F1D20AA8B080047CCB0 /* QuoteTests.swift in Sources */,
+				D87B9F2720AB35890047CCB0 /* QuoteViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
