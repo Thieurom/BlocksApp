@@ -12,6 +12,8 @@
 		D87B9F0420AA7FFE0047CCB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D87B9F0220AA7FFE0047CCB0 /* LaunchScreen.storyboard */; };
 		D87B9F1B20AA8AFB0047CCB0 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9F1A20AA8AFB0047CCB0 /* Quote.swift */; };
 		D87B9F1D20AA8B080047CCB0 /* QuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9F1C20AA8B080047CCB0 /* QuoteTests.swift */; };
+		D87B9F1F20AA8BEC0047CCB0 /* QuoteStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9F1E20AA8BEC0047CCB0 /* QuoteStoreTests.swift */; };
+		D87B9F2120AA8BF50047CCB0 /* QuoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9F2020AA8BF50047CCB0 /* QuoteStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		D87B9F1020AA7FFF0047CCB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D87B9F1A20AA8AFB0047CCB0 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		D87B9F1C20AA8B080047CCB0 /* QuoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTests.swift; sourceTree = "<group>"; };
+		D87B9F1E20AA8BEC0047CCB0 /* QuoteStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteStoreTests.swift; sourceTree = "<group>"; };
+		D87B9F2020AA8BF50047CCB0 /* QuoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 			children = (
 				D87B9EF920AA7FFD0047CCB0 /* AppDelegate.swift */,
 				D87B9F1A20AA8AFB0047CCB0 /* Quote.swift */,
+				D87B9F2020AA8BF50047CCB0 /* QuoteStore.swift */,
 				D87B9F0020AA7FFE0047CCB0 /* Assets.xcassets */,
 				D87B9F0220AA7FFE0047CCB0 /* LaunchScreen.storyboard */,
 				D87B9F0520AA7FFE0047CCB0 /* Info.plist */,
@@ -89,6 +94,7 @@
 			children = (
 				D87B9F1020AA7FFF0047CCB0 /* Info.plist */,
 				D87B9F1C20AA8B080047CCB0 /* QuoteTests.swift */,
+				D87B9F1E20AA8BEC0047CCB0 /* QuoteStoreTests.swift */,
 			);
 			path = ProgrammingQuotesTests;
 			sourceTree = "<group>";
@@ -212,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D87B9F1B20AA8AFB0047CCB0 /* Quote.swift in Sources */,
+				D87B9F2120AA8BF50047CCB0 /* QuoteStore.swift in Sources */,
 				D87B9EFA20AA7FFD0047CCB0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D87B9F1F20AA8BEC0047CCB0 /* QuoteStoreTests.swift in Sources */,
 				D87B9F1D20AA8B080047CCB0 /* QuoteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
