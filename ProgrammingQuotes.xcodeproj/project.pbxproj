@@ -17,6 +17,7 @@
 		D87B9F2320AAC5690047CCB0 /* ProgrammingQuotesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9F2220AAC5690047CCB0 /* ProgrammingQuotesAPI.swift */; };
 		D87B9F2520AB35750047CCB0 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9F2420AB35750047CCB0 /* QuoteViewController.swift */; };
 		D87B9F2720AB35890047CCB0 /* QuoteViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9F2620AB35890047CCB0 /* QuoteViewControllerTests.swift */; };
+		D87B9F2920AB3B990047CCB0 /* AppLaunchingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B9F2820AB3B990047CCB0 /* AppLaunchingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		D87B9F2220AAC5690047CCB0 /* ProgrammingQuotesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingQuotesAPI.swift; sourceTree = "<group>"; };
 		D87B9F2420AB35750047CCB0 /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
 		D87B9F2620AB35890047CCB0 /* QuoteViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewControllerTests.swift; sourceTree = "<group>"; };
+		D87B9F2820AB3B990047CCB0 /* AppLaunchingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				D87B9F1C20AA8B080047CCB0 /* QuoteTests.swift */,
 				D87B9F1E20AA8BEC0047CCB0 /* QuoteStoreTests.swift */,
 				D87B9F2620AB35890047CCB0 /* QuoteViewControllerTests.swift */,
+				D87B9F2820AB3B990047CCB0 /* AppLaunchingTests.swift */,
 			);
 			path = ProgrammingQuotesTests;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				D87B9F1F20AA8BEC0047CCB0 /* QuoteStoreTests.swift in Sources */,
 				D87B9F1D20AA8B080047CCB0 /* QuoteTests.swift in Sources */,
 				D87B9F2720AB35890047CCB0 /* QuoteViewControllerTests.swift in Sources */,
+				D87B9F2920AB3B990047CCB0 /* AppLaunchingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

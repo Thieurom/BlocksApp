@@ -22,15 +22,6 @@ class QuoteViewControllerTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
- 
-    func testIsAppRootViewController() {
-        guard let rootViewController = UIApplication.shared.keyWindow?.rootViewController else {
-            XCTFail("Failed initialize app")
-            return
-        }
-
-        XCTAssertTrue(rootViewController is QuoteViewController)
-    }
     
     func testHasTextLabel() {
         UIApplication.shared.keyWindow?.rootViewController = sut
