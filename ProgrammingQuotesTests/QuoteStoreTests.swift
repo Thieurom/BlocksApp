@@ -74,6 +74,29 @@ class QuoteStoreTests: XCTestCase {
             XCTAssertEqual(catchedQuote!.authorName, "Anon")
         }
     }
+    
+    func testFetchRandomQuoteFailedWithInvalidData() {
+        let mockURLSession = MockURLSession(data: Data(), urlResponse: nil, error: nil)
+        sut.session = mockURLSession
+        
+        let errorExpectation = expectation(description: "Invalid Data Error")
+        var catchedError: Error?
+        
+        sut.fetchRandomQuote { (result) in
+            switch result {
+            case .success:
+                XCTFail("Should be failed because of invalid data")
+                return
+            case let .failure(error):
+                catchedError = error
+                errorExpectation.fulfill()
+            }
+        }
+        
+        waitForExpectations(timeout: 1.0) { (_) in
+            XCTAssertNotNil(catchedError)
+        }
+    }
 }
 
 extension QuoteStoreTests {

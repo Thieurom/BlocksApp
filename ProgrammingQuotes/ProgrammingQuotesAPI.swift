@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum ProgrammingQuotesError: Error {
+    case invalidJSONData
+}
+
 struct ProgrammingQuotesAPI {
     
     private static let baseURLString = "http://quotes.stormconsultancy.co.uk"

@@ -23,6 +23,8 @@ class QuoteStore {
         session.dataTask(with: url) { (data, _, _) in
             guard let data = data,
                 let quote = try? JSONDecoder().decode(Quote.self, from: data) else {
+                    let error = ProgrammingQuotesError.invalidJSONData
+                    completion(.failure(error))
                     return
             }
             
