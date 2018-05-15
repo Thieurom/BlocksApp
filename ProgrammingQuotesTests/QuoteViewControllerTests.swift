@@ -40,4 +40,15 @@ class QuoteViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.nextQuoteButton)
         XCTAssertTrue(sut.nextQuoteButton.isDescendant(of: sut.view))
     }
+    
+    func testNextQuoteButtonHasCorrectAction() {
+        let button = sut.nextQuoteButton
+        
+        guard let actions = button.actions(forTarget: sut, forControlEvent: .touchUpInside) else {
+            XCTFail("The button has no actions")
+            return
+        }
+        
+        XCTAssertTrue(actions.contains("showNextQuote:"))
+    }
 }

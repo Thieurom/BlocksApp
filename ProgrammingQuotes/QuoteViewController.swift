@@ -24,5 +24,16 @@ class QuoteViewController: UIViewController {
         view.addSubview(textLabel)
         view.addSubview(authorNameLabel)
         view.addSubview(nextQuoteButton)
+        
+        nextQuoteButton.addTarget(self, action: #selector(showNextQuote(_:)), for: .touchUpInside)
+    }
+}
+
+// MARK: -
+
+private extension QuoteViewController {
+    
+    @objc func showNextQuote(_ sender: UIButton) {
+        
     }
 }
