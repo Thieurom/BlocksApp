@@ -29,14 +29,16 @@ class QuoteStoreTests: XCTestCase {
         
         sut.fetchRandomQuote()
         
-        guard let url = mockURLSession.catchedURL else {
-            XCTFail("Should catch url")
-            return
-        }
+        XCTAssertEqual(mockURLSession.urlComponents?.host, "quotes.stormconsultancy.co.uk")
+    }
+    
+    func testFetchRandomQuoteUsesCorrectPath() {
+        let mockURLSession = MockURLSession()
+        sut.session = mockURLSession
         
-        let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        sut.fetchRandomQuote()
         
-        XCTAssertEqual(urlComponents?.host, "quotes.stormconsultancy.co.uk")
+        XCTAssertEqual(mockURLSession.urlComponents?.path, "/random.json")
     }
 }
 
@@ -45,6 +47,14 @@ extension QuoteStoreTests {
     class MockURLSession: URLSession {
         
         var catchedURL: URL?
+        var urlComponents: URLComponents? {
+            guard let url = catchedURL else {
+                XCTFail("Should catch url")
+                return nil
+            }
+            
+            return URLComponents(url: url, resolvingAgainstBaseURL: true)
+        }
         
         override func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
             catchedURL = url
