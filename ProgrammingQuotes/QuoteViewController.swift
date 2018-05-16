@@ -16,6 +16,10 @@ class QuoteViewController: UIViewController {
     lazy var authorNameLabel: UILabel = UILabel()
     lazy var nextQuoteButton: UIButton = UIButton()
     
+    // MARK: Data
+    
+    var quote: Quote?
+    
     // MARK: Life cycle
     
     override func viewDidLoad() {

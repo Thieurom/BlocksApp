@@ -17,7 +17,6 @@ class QuoteViewControllerTests: XCTestCase {
         super.setUp()
         
         sut = QuoteViewController()
-        UIApplication.shared.keyWindow?.rootViewController = sut
         
         sut.loadViewIfNeeded()
     }
@@ -50,5 +49,9 @@ class QuoteViewControllerTests: XCTestCase {
         }
         
         XCTAssertTrue(actions.contains("showNextQuote:"))
+    }
+    
+    func testHasQuoteInitiallyEqualNil() {
+        XCTAssertNil(sut.quote)
     }
 }
