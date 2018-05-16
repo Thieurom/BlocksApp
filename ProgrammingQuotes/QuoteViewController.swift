@@ -19,6 +19,7 @@ class QuoteViewController: UIViewController {
     // MARK: Data
     
     var quote: Quote?
+    var quoteStore: QuoteStore!
     
     // MARK: Life cycle
     
@@ -38,6 +39,8 @@ class QuoteViewController: UIViewController {
 private extension QuoteViewController {
     
     @objc func showNextQuote(_ sender: UIButton) {
-        
+        quoteStore.fetchRandomQuote { (_) in
+            //
+        }
     }
 }

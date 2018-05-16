@@ -54,4 +54,25 @@ class QuoteViewControllerTests: XCTestCase {
     func testHasQuoteInitiallyEqualNil() {
         XCTAssertNil(sut.quote)
     }
+    
+    func testNextQuoteButtonActionDidFetchRandomQuote() {
+        let mockQuoteStore = MockQuoteStore()
+        sut.quoteStore = mockQuoteStore
+        
+        sut.nextQuoteButton.sendActions(for: .touchUpInside)
+        
+        XCTAssertTrue(mockQuoteStore.wasFetchRandomQuoteGotCalled)
+    }
+}
+
+extension QuoteViewControllerTests {
+    
+    class MockQuoteStore: QuoteStore {
+        
+        var wasFetchRandomQuoteGotCalled = false
+        
+        override func fetchRandomQuote(completion: @escaping (QuoteResult) -> Void) {
+            wasFetchRandomQuoteGotCalled = true
+        }
+    }
 }

@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let quoteViewController = QuoteViewController()
         window!.rootViewController = quoteViewController
         window?.makeKeyAndVisible()
+        
+        let quoteStore = QuoteStore()
+        quoteViewController.quoteStore = quoteStore
 
         return true
     }
