@@ -39,8 +39,16 @@ class QuoteViewController: UIViewController {
 private extension QuoteViewController {
     
     @objc func showNextQuote(_ sender: UIButton) {
-        quoteStore.fetchRandomQuote { (_) in
-            //
+        quoteStore.fetchRandomQuote { (quoteResult) in
+            DispatchQueue.main.async {
+                switch quoteResult {
+                case let .success(quote):
+                    self.quote = quote
+                case let .failure(error):
+                    self.quote = nil
+                    print("Error: \(error)")
+                }
+            }
         }
     }
 }

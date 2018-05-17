@@ -59,9 +59,30 @@ class QuoteViewControllerTests: XCTestCase {
         let mockQuoteStore = MockQuoteStore()
         sut.quoteStore = mockQuoteStore
         
+        let quote = Quote(text: "This is a quote", authorName: "John")
+        let quoteResult = QuoteResult.success(quote)
+        mockQuoteStore.quoteResult = quoteResult
+        
         sut.nextQuoteButton.sendActions(for: .touchUpInside)
         
         XCTAssertTrue(mockQuoteStore.wasFetchRandomQuoteGotCalled)
+    }
+    
+    func testSetQuoteAfterFetchRandomQuote() {
+        let mockQuoteStore = MockQuoteStore()
+        sut.quoteStore = mockQuoteStore
+        
+        let quote = Quote(text: "This is a quote", authorName: "John")
+        let quoteResult = QuoteResult.success(quote)
+        mockQuoteStore.quoteResult = quoteResult
+        
+        sut.nextQuoteButton.sendActions(for: .touchUpInside)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
+            XCTAssertNotNil(self.sut.quote)
+            XCTAssertEqual(self.sut.quote?.text, "This is a quote")
+            XCTAssertEqual(self.sut.quote?.authorName, "John")
+        }
     }
 }
 
@@ -70,9 +91,11 @@ extension QuoteViewControllerTests {
     class MockQuoteStore: QuoteStore {
         
         var wasFetchRandomQuoteGotCalled = false
+        var quoteResult: QuoteResult?
         
         override func fetchRandomQuote(completion: @escaping (QuoteResult) -> Void) {
             wasFetchRandomQuoteGotCalled = true
+            completion(quoteResult!)
         }
     }
 }
