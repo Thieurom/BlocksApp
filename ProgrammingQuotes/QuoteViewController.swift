@@ -33,6 +33,8 @@ class QuoteViewController: UIViewController {
         view.addSubview(shareButton)
         
         nextQuoteButton.addTarget(self, action: #selector(showNextQuote(_:)), for: .touchUpInside)
+        
+        shareButton.addTarget(self, action: #selector(displayActivityMenu(_:)), for: .touchUpInside)
     }
 }
 
@@ -52,5 +54,9 @@ private extension QuoteViewController {
                 }
             }
         }
+    }
+    
+    @objc func displayActivityMenu(_ sender: UIButton) {
+        
     }
 }

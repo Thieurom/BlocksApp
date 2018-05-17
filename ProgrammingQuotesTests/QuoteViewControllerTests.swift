@@ -89,6 +89,17 @@ class QuoteViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.shareButton)
         XCTAssertTrue(sut.shareButton.isDescendant(of: sut.view))
     }
+    
+    func testShareButtonHasCorrectAction() {
+        let button = sut.shareButton
+        
+        guard let actions = button.actions(forTarget: sut, forControlEvent: .touchUpInside) else {
+            XCTFail("The button has no actions")
+            return
+        }
+        
+        XCTAssertTrue(actions.contains("displayActivityMenu:"))
+    }
 }
 
 extension QuoteViewControllerTests {
