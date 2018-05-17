@@ -12,8 +12,25 @@ class QuoteViewController: UIViewController {
     
     // MARK: Views
     
-    lazy var textLabel: UILabel = UILabel()
-    lazy var authorNameLabel: UILabel = UILabel()
+    lazy var textLabel: UILabel = {
+        let label = UILabel()
+        
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.textColor = .black
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        
+        return label
+    }()
+    
+    lazy var authorNameLabel: UILabel = {
+        let label = UILabel()
+        
+        label.textColor = .gray
+        label.textAlignment = .right
+        
+        return label
+    }()
     
     lazy var nextQuoteButton: UIButton = {
         let button = UIButton(type: .system)
@@ -65,6 +82,7 @@ class QuoteViewController: UIViewController {
 
 private extension QuoteViewController {
     
+    // swiftlint:disable function_body_length
     func setupView() {
         view.backgroundColor = .white
         
@@ -99,6 +117,11 @@ private extension QuoteViewController {
             labelsContainerView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             labelsContainerView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
             labelsContainerView.trailingAnchor.constraint(equalTo: margins.trailingAnchor)])
+        
+        // for the case the textLabel has to display a very long text
+        textLabel.adjustsFontSizeToFitWidth = true
+        textLabel.minimumScaleFactor = 0.75
+        authorNameLabel.setContentCompressionResistancePriority(.defaultHigh + 1, for: .vertical)
 
         // setup buttons
         
@@ -132,7 +155,7 @@ private extension QuoteViewController {
     func updateView() {
         if let quote = quote {
             textLabel.text = quote.text
-            authorNameLabel.text = quote.authorName
+            authorNameLabel.text = "— \(quote.authorName)"
         } else {
             textLabel.text = "This is not a quote! There's actually some error!"
             authorNameLabel.text = ""
