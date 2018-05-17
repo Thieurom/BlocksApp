@@ -44,7 +44,12 @@ class QuoteViewController: UIViewController {
     
     // MARK: Data
     
-    var quote: Quote?
+    var quote: Quote? {
+        didSet {
+            updateView()
+        }
+    }
+    
     var quoteStore: QuoteStore!
     
     // MARK: Life cycle
@@ -122,6 +127,16 @@ private extension QuoteViewController {
         // add target-action
         nextQuoteButton.addTarget(self, action: #selector(showNextQuote(_:)), for: .touchUpInside)
         shareButton.addTarget(self, action: #selector(displayActivityMenu(_:)), for: .touchUpInside)
+    }
+    
+    func updateView() {
+        if let quote = quote {
+            textLabel.text = quote.text
+            authorNameLabel.text = quote.authorName
+        } else {
+            textLabel.text = "This is not a quote! There's actually some error!"
+            authorNameLabel.text = ""
+        }
     }
     
     @objc func showNextQuote(_ sender: UIButton) {
