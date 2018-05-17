@@ -15,6 +15,7 @@ class QuoteViewController: UIViewController {
     lazy var textLabel: UILabel = UILabel()
     lazy var authorNameLabel: UILabel = UILabel()
     lazy var nextQuoteButton: UIButton = UIButton()
+    lazy var shareButton: UIButton = UIButton()
     
     // MARK: Data
     
@@ -29,6 +30,7 @@ class QuoteViewController: UIViewController {
         view.addSubview(textLabel)
         view.addSubview(authorNameLabel)
         view.addSubview(nextQuoteButton)
+        view.addSubview(shareButton)
         
         nextQuoteButton.addTarget(self, action: #selector(showNextQuote(_:)), for: .touchUpInside)
     }

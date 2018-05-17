@@ -84,6 +84,11 @@ class QuoteViewControllerTests: XCTestCase {
             XCTAssertEqual(self.sut.quote?.authorName, "John")
         }
     }
+    
+    func testHasShareButton() {
+        XCTAssertNotNil(sut.shareButton)
+        XCTAssertTrue(sut.shareButton.isDescendant(of: sut.view))
+    }
 }
 
 extension QuoteViewControllerTests {
