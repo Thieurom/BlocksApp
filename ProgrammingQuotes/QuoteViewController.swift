@@ -75,6 +75,7 @@ class QuoteViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
+        showQuote()
     }
 }
 
@@ -162,7 +163,7 @@ private extension QuoteViewController {
         }
     }
     
-    @objc func showNextQuote(_ sender: UIButton) {
+    func showQuote() {
         quoteStore.fetchRandomQuote { (quoteResult) in
             DispatchQueue.main.async {
                 switch quoteResult {
@@ -174,6 +175,10 @@ private extension QuoteViewController {
                 }
             }
         }
+    }
+    
+    @objc func showNextQuote(_ sender: UIButton) {
+        showQuote()
     }
     
     @objc func displayActivityMenu(_ sender: UIButton) {

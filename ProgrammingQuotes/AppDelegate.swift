@@ -17,11 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = window ?? UIWindow()
         
         let quoteViewController = QuoteViewController()
-        window!.rootViewController = quoteViewController
-        window?.makeKeyAndVisible()
-        
         let quoteStore = QuoteStore()
         quoteViewController.quoteStore = quoteStore
+        
+        window!.rootViewController = quoteViewController
+        window?.makeKeyAndVisible()
 
         return true
     }

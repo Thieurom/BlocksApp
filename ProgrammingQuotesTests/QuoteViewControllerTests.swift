@@ -17,6 +17,7 @@ class QuoteViewControllerTests: XCTestCase {
         super.setUp()
         
         sut = QuoteViewController()
+        sut.quoteStore = QuoteStore()
         
         sut.loadViewIfNeeded()
     }
