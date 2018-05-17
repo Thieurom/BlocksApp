@@ -100,6 +100,20 @@ class QuoteViewControllerTests: XCTestCase {
         
         XCTAssertTrue(actions.contains("displayActivityMenu:"))
     }
+    
+    func testShareButtonPresentActivityMenu() {
+        XCTAssertNil(sut.presentedViewController)
+        
+        let button = sut.shareButton
+        
+        UIApplication.shared.keyWindow?.rootViewController = sut
+        button.sendActions(for: .touchUpInside)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
+            XCTAssertNotNil(self.sut.presentedViewController)
+            XCTAssertTrue(self.sut.presentedViewController is UIActivityViewController)
+        }
+    }
 }
 
 extension QuoteViewControllerTests {

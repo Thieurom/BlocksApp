@@ -57,6 +57,8 @@ private extension QuoteViewController {
     }
     
     @objc func displayActivityMenu(_ sender: UIButton) {
+        let activityViewController = UIActivityViewController(activityItems: ["Sharing content"], applicationActivities: nil)
         
+        present(activityViewController, animated: true, completion: nil)
     }
 }
