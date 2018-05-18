@@ -10,7 +10,14 @@ import UIKit
 
 class QuoteViewController: UIViewController {
     
-    // MARK: Views
+    // MARK: Constants
+    
+    private struct PropertyKeys {
+        static let labelsOffset: CGFloat = 24.0
+        static let buttonsContainerHeight: CGFloat = 40.0
+    }
+    
+    // MARK: - Views
     
     lazy var textLabel: UILabel = {
         let label = UILabel()
@@ -78,7 +85,15 @@ class QuoteViewController: UIViewController {
     
     var quoteStore: QuoteStore!
     
-    // MARK: Life cycle
+    // MARK: Constraint references
+    
+    var labelsCenterYConstraint: NSLayoutConstraint!
+    var nextQuoteButtonLeadingConstraint: NSLayoutConstraint!
+    var nextQuoteButtonTrailingConstraint: NSLayoutConstraint!
+    var shareButtonLeadingConstraint: NSLayoutConstraint!
+    var shareButtonTrailingConstraint: NSLayoutConstraint!
+    
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,8 +132,14 @@ private extension QuoteViewController {
         NSLayoutConstraint.activate([
             labelStack.leadingAnchor.constraint(equalTo: labelsContainerView.leadingAnchor),
             labelStack.trailingAnchor.constraint(equalTo: labelsContainerView.trailingAnchor),
-            labelStack.centerYAnchor.constraint(equalTo: labelsContainerView.centerYAnchor),
+//            labelStack.centerYAnchor.constraint(equalTo: labelsContainerView.centerYAnchor),
             labelStack.heightAnchor.constraint(lessThanOrEqualTo: labelsContainerView.heightAnchor, multiplier: 0.9)])
+        
+        labelsCenterYConstraint = labelStack.centerYAnchor.constraint(equalTo: labelsContainerView.centerYAnchor)
+        
+        // starting position
+        labelsCenterYConstraint.constant = -PropertyKeys.labelsOffset
+        labelsCenterYConstraint.isActive = true
         
         // constraint spinner
         NSLayoutConstraint.activate([
@@ -138,6 +159,10 @@ private extension QuoteViewController {
         textLabel.adjustsFontSizeToFitWidth = true
         textLabel.minimumScaleFactor = 0.75
         authorNameLabel.setContentCompressionResistancePriority(.defaultHigh + 1, for: .vertical)
+        
+        // initially hide labels
+        textLabel.alpha = 0
+        authorNameLabel.alpha = 0
 
         // setup buttons
         
@@ -152,16 +177,24 @@ private extension QuoteViewController {
         NSLayoutConstraint.activate([
             buttonsContainerView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
             buttonsContainerView.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
-            buttonsContainerView.heightAnchor.constraint(equalToConstant: 40),
+            buttonsContainerView.heightAnchor.constraint(equalToConstant: PropertyKeys.buttonsContainerHeight),
             buttonsContainerView.topAnchor.constraint(equalTo: labelsContainerView.bottomAnchor),
             buttonsContainerView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)])
         
         // constraint buttons within buttonsContainerView
         NSLayoutConstraint.activate([
-            nextQuoteButton.trailingAnchor.constraint(equalTo: buttonsContainerView.trailingAnchor),
             nextQuoteButton.centerYAnchor.constraint(equalTo: buttonsContainerView.centerYAnchor),
-            shareButton.leadingAnchor.constraint(equalTo: buttonsContainerView.leadingAnchor),
             shareButton.centerYAnchor.constraint(equalTo: buttonsContainerView.centerYAnchor)])
+        
+        nextQuoteButtonTrailingConstraint = nextQuoteButton.trailingAnchor.constraint(equalTo: buttonsContainerView.trailingAnchor)
+        nextQuoteButtonLeadingConstraint = nextQuoteButton.leadingAnchor.constraint(equalTo: view.trailingAnchor)
+        
+        shareButtonLeadingConstraint = shareButton.leadingAnchor.constraint(equalTo: buttonsContainerView.leadingAnchor)
+        shareButtonTrailingConstraint = shareButton.trailingAnchor.constraint(equalTo: view.leadingAnchor)
+        
+        // starting positions
+        nextQuoteButtonLeadingConstraint.isActive = true
+        shareButtonTrailingConstraint.isActive = true
         
         // add target-action
         nextQuoteButton.addTarget(self, action: #selector(showNextQuote(_:)), for: .touchUpInside)
@@ -169,6 +202,8 @@ private extension QuoteViewController {
     }
     
     func updateView() {
+        spinner.stopAnimating()
+        
         if let quote = quote {
             textLabel.text = quote.text
             authorNameLabel.text = "— \(quote.authorName)"
@@ -177,7 +212,22 @@ private extension QuoteViewController {
             authorNameLabel.text = ""
         }
         
-        spinner.stopAnimating()
+        // update layout upon label's content changed
+        view.layoutIfNeeded()
+        
+        // move labels to center and show buttons
+        labelsCenterYConstraint.constant = 0
+        nextQuoteButtonLeadingConstraint.isActive = false
+        nextQuoteButtonTrailingConstraint.isActive = true
+        shareButtonTrailingConstraint.isActive = false
+        shareButtonLeadingConstraint.isActive = true
+        
+        // animate
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+            self.textLabel.alpha = 1
+            self.authorNameLabel.alpha = 1
+            self.view.layoutIfNeeded()
+        })
     }
     
     func showQuote() {
@@ -197,7 +247,23 @@ private extension QuoteViewController {
     }
     
     @objc func showNextQuote(_ sender: UIButton) {
-        showQuote()
+        // offset labels upward
+        labelsCenterYConstraint.constant = -PropertyKeys.labelsOffset
+        
+        // hide buttons from screen
+        nextQuoteButtonTrailingConstraint.isActive = false
+        nextQuoteButtonLeadingConstraint.isActive = true
+        shareButtonLeadingConstraint.isActive = false
+        shareButtonTrailingConstraint.isActive = true
+        
+        // animate
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+            self.textLabel.alpha = 0
+            self.authorNameLabel.alpha = 0
+            self.view.layoutIfNeeded()
+        }, completion: { (_) in
+            self.showQuote()
+        })
     }
     
     @objc func displayActivityMenu(_ sender: UIButton) {

@@ -66,7 +66,9 @@ class QuoteViewControllerTests: XCTestCase {
         
         sut.nextQuoteButton.sendActions(for: .touchUpInside)
         
-        XCTAssertTrue(mockQuoteStore.wasFetchRandomQuoteGotCalled)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
+            XCTAssertTrue(mockQuoteStore.wasFetchRandomQuoteGotCalled)
+        }
     }
     
     func testSetQuoteAfterFetchRandomQuote() {
