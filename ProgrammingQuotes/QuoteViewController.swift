@@ -59,6 +59,15 @@ class QuoteViewController: UIViewController {
         return button
     }()
     
+    lazy var spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView()
+        
+        spinner.color = .gray
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        
+        return spinner
+    }()
+    
     // MARK: Data
     
     var quote: Quote? {
@@ -101,6 +110,7 @@ private extension QuoteViewController {
         labelStack.spacing = 16
         
         labelsContainerView.addSubview(labelStack)
+        labelsContainerView.addSubview(spinner)
         view.addSubview(labelsContainerView)
         
         // constraint labelStack within labelContainerView
@@ -109,6 +119,11 @@ private extension QuoteViewController {
             labelStack.trailingAnchor.constraint(equalTo: labelsContainerView.trailingAnchor),
             labelStack.centerYAnchor.constraint(equalTo: labelsContainerView.centerYAnchor),
             labelStack.heightAnchor.constraint(lessThanOrEqualTo: labelsContainerView.heightAnchor, multiplier: 0.9)])
+        
+        // constraint spinner
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: labelsContainerView.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: labelsContainerView.centerYAnchor)])
         
         let margins = view.layoutMarginsGuide
         let safeArea = view.safeAreaLayoutGuide
@@ -161,9 +176,13 @@ private extension QuoteViewController {
             textLabel.text = "This is not a quote! There's actually some error!"
             authorNameLabel.text = ""
         }
+        
+        spinner.stopAnimating()
     }
     
     func showQuote() {
+        spinner.startAnimating()
+
         quoteStore.fetchRandomQuote { (quoteResult) in
             DispatchQueue.main.async {
                 switch quoteResult {
