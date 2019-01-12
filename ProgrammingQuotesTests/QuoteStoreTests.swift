@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import ProgrammingQuotes
+@testable import Blocks
 
 class QuoteStoreTests: XCTestCase {
     
