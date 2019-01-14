@@ -33,9 +33,9 @@ class QuoteStore {
             }
             
             guard let quote = try? JSONDecoder().decode(Quote.self, from: data) else {
-                    let error = ProgrammingQuotesError.invalidJSONData
-                    completion(.failure(error))
-                    return
+                let error = ProgrammingQuotesError.invalidJSONData
+                completion(.failure(error))
+                return
             }
             
             completion(.success(quote))
