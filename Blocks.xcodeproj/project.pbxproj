@@ -32,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D8152A0E21EC389C00D95BB3 /* debug.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.example.xcconfig; sourceTree = "<group>"; };
+		D82F1F2E21EC32C8001510B8 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
 		D87B9EF620AA7FFD0047CCB0 /* Blocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87B9EF920AA7FFD0047CCB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D87B9F0020AA7FFE0047CCB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D82F1F2D21EC32B5001510B8 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D82F1F2E21EC32C8001510B8 /* debug.xcconfig */,
+				D8152A0E21EC389C00D95BB3 /* debug.example.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		D87B9EED20AA7FFD0047CCB0 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +106,7 @@
 				D87B9F1A20AA8AFB0047CCB0 /* Quote.swift */,
 				D87B9F2020AA8BF50047CCB0 /* QuoteStore.swift */,
 				D87B9F2420AB35750047CCB0 /* QuoteViewController.swift */,
+				D82F1F2D21EC32B5001510B8 /* Config */,
 				D87B9F0020AA7FFE0047CCB0 /* Assets.xcassets */,
 				D87B9F0220AA7FFE0047CCB0 /* LaunchScreen.storyboard */,
 				D87B9F0520AA7FFE0047CCB0 /* Info.plist */,
@@ -399,6 +411,7 @@
 		};
 		D87B9F1420AA7FFF0047CCB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D82F1F2E21EC32C8001510B8 /* debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;

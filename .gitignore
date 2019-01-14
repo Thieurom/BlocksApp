@@ -40,3 +40,7 @@ xcuserdata/
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
+
+### Config
+*.xcconfig
+!*.example.xcconfig
