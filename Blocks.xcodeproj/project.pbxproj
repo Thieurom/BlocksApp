@@ -27,7 +27,7 @@
 			containerPortal = D87B9EEE20AA7FFD0047CCB0 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D87B9EF520AA7FFD0047CCB0;
-			remoteInfo = ProgrammingQuotes;
+			remoteInfo = Blocks;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -82,9 +82,9 @@
 		D87B9EED20AA7FFD0047CCB0 = {
 			isa = PBXGroup;
 			children = (
-				D87B9EF820AA7FFD0047CCB0 /* ProgrammingQuotes */,
+				D87B9EF820AA7FFD0047CCB0 /* Blocks */,
 				D8A81E5720AF2FD000C1A523 /* Screenshots */,
-				D87B9F0D20AA7FFF0047CCB0 /* ProgrammingQuotesTests */,
+				D87B9F0D20AA7FFF0047CCB0 /* BlocksTests */,
 				D87B9EF720AA7FFD0047CCB0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,7 +98,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D87B9EF820AA7FFD0047CCB0 /* ProgrammingQuotes */ = {
+		D87B9EF820AA7FFD0047CCB0 /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
 				D87B9EF920AA7FFD0047CCB0 /* AppDelegate.swift */,
@@ -111,10 +111,10 @@
 				D87B9F0220AA7FFE0047CCB0 /* LaunchScreen.storyboard */,
 				D87B9F0520AA7FFE0047CCB0 /* Info.plist */,
 			);
-			path = ProgrammingQuotes;
+			path = Blocks;
 			sourceTree = "<group>";
 		};
-		D87B9F0D20AA7FFF0047CCB0 /* ProgrammingQuotesTests */ = {
+		D87B9F0D20AA7FFF0047CCB0 /* BlocksTests */ = {
 			isa = PBXGroup;
 			children = (
 				D87B9F1020AA7FFF0047CCB0 /* Info.plist */,
@@ -123,7 +123,7 @@
 				D87B9F2620AB35890047CCB0 /* QuoteViewControllerTests.swift */,
 				D87B9F2820AB3B990047CCB0 /* AppLaunchingTests.swift */,
 			);
-			path = ProgrammingQuotesTests;
+			path = BlocksTests;
 			sourceTree = "<group>";
 		};
 		D8A81E5720AF2FD000C1A523 /* Screenshots */ = {
@@ -151,7 +151,7 @@
 			dependencies = (
 			);
 			name = Blocks;
-			productName = ProgrammingQuotes;
+			productName = Blocks;
 			productReference = D87B9EF620AA7FFD0047CCB0 /* Blocks.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -169,7 +169,7 @@
 				D87B9F0C20AA7FFF0047CCB0 /* PBXTargetDependency */,
 			);
 			name = BlocksTests;
-			productName = ProgrammingQuotesTests;
+			productName = BlocksTests;
 			productReference = D87B9F0A20AA7FFF0047CCB0 /* BlocksTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -415,7 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				INFOPLIST_FILE = ProgrammingQuotes/Info.plist;
+				INFOPLIST_FILE = Blocks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,7 +432,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				INFOPLIST_FILE = ProgrammingQuotes/Info.plist;
+				INFOPLIST_FILE = Blocks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,13 +451,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ProgrammingQuotesTests/Info.plist;
+				INFOPLIST_FILE = BlocksTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.doanthieu.ProgrammingQuotesTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.doanthieu.BlocksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -473,13 +473,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ProgrammingQuotesTests/Info.plist;
+				INFOPLIST_FILE = BlocksTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.doanthieu.ProgrammingQuotesTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.doanthieu.BlocksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
