@@ -1,0 +1,13 @@
+//
+//  release.example.xcconfig
+//  Blocks
+//
+//  Created by Doan Le Thieu on 2/1/19.
+//  Copyright © 2019 Doan Le Thieu. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+PROVISIONING_PROFILE_SPECIFIER = PROVISIONING_PROFILE_SPECIFIER_DISTRIBUTION
+DEVELOPMENT_TEAM = DEVELOPMENT_TEAM_VALUE
